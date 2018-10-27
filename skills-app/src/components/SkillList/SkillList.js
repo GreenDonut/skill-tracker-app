@@ -15,7 +15,7 @@ class SkillList extends Component {
         }
     }
     
-    addSkillHandler = (event,skillField) => {
+    addSkillHandler = (skillField) => {
         //name the skill
         console.log(skillField);
         //const skill = event.target.value.trim();
