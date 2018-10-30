@@ -1,0 +1,10 @@
+
+.skill-font {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+  }
+
+.skill-background {
+      background-color: white;
+      opacity: 0.05;
+  }

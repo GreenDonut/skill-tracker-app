@@ -30,7 +30,7 @@ class SkillList extends Component {
             })
         } else {
             this.setState({
-                errorMsg: 'please enter a skill name'
+                errorMsg: 'Please enter a skill name.'
             })
         }
    
@@ -78,14 +78,16 @@ class SkillList extends Component {
   render () {
     return (
       <div>
-          <span>{this.state.errorMsg}</span>
+
         { !this.state.addingSkill &&
-            <button onClick={this.hideButtonHandler}>Add Skill</button>
+            <button
+             class="f6 grow no-underline br-pill ba ph3 pv1 mb2 dib white bg-transparent" href="#0"
+             onClick={this.hideButtonHandler}>NEW SKILL</button>
         }
         { this.state.addingSkill &&
             <AddSkill addSkill={this.addSkillHandler}/>
         }
-        
+        <span>{this.state.errorMsg}</span>
        {
            this.state.skills.map((currSkill,index) => {
               return  <Skill skill={currSkill.skill}

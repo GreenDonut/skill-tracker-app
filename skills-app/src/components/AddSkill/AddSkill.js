@@ -21,8 +21,10 @@ class AddSkill extends Component {
   render () {
     return (
       <div>
-            <input value={this.state.value} onChange={(e) => this.onFieldChange(e)}type="text"></input>
-            <button onClick={() => this.props.addSkill(this.state.value)}>Add new skill</button>
+            <input className="ml4 mr3"value={this.state.value} onChange={(e) => this.onFieldChange(e)}type="text"></input>
+            <button 
+            className="f6 grow no-underline br-pill ba ph3 pv1 mb2 dib white bg-transparent"
+            onClick={() => this.props.addSkill(this.state.value)}>ADD SKILL</button>
       </div>
     )
   }
