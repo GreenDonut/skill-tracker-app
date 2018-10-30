@@ -1,33 +1,50 @@
 import React, { Component } from 'react';
 import Skill from '../Skill/Skill';
-import AddSkill from '../Skill/AddSkill';
+import AddSkill from '../AddSkill/AddSkill';
 
 class SkillList extends Component {
     constructor(props) {
         super(props);
         this.state = {
             skills: [
-                        {skill: 'Guitar',hours: 20},
-                        {skill: 'Piano', hours: 10}
+                        
 
                     ],
-            addingSkill: false
+            addingSkill: false,
+            errorMsg: ''
         }
     }
     
-    addSkillHandler = (event,skillField) => {
-        //name the skill
-        console.log(skillField);
-        //const skill = event.target.value.trim();
-        //add skill to array 
-
-        //re-render
+    addSkillHandler = (skillField) => {
+        if (skillField) {
+            let skill = skillField.trim();
+            let updatedSkillsArray = [...this.state.skills];
+            updatedSkillsArray.push({
+                skill: skill,
+                hours: 0
+            });
+    
+            this.setState({
+                skills: updatedSkillsArray,
+                errorMsg: ''
+            })
+        } else {
+            this.setState({
+                errorMsg: 'please enter a skill name'
+            })
+        }
+   
     }
 
 
-    deleteSkillHandler = () => {
+    deleteSkillHandler = (index) => {
+        let skillArr = [...this.state.skills];
+        skillArr.splice(index, 1);
         
-        //delete skill 
+        this.setState( {
+            skills: skillArr
+        })
+         
     }
 
     addHourHandler = (index) => {
@@ -61,6 +78,7 @@ class SkillList extends Component {
   render () {
     return (
       <div>
+          <span>{this.state.errorMsg}</span>
         { !this.state.addingSkill &&
             <button onClick={this.hideButtonHandler}>Add Skill</button>
         }
@@ -75,6 +93,7 @@ class SkillList extends Component {
                              addHour={this.addHourHandler}
                              subtractHour={this.subtractHourHandler}
                              index={index}
+                             deleteSkill={this.deleteSkillHandler}
               />
        })
        }
