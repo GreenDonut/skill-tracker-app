@@ -21,14 +21,14 @@ class Skill extends Component {
   render () {
     return (
      
-        <div className='tc skill-font ba br4 mw5 ma3 b--white grow'>
-            <h3 className='skill-font'>{this.props.skill}</h3>
+        <div className='tc skill-font skill-background ba br4 mw5 ma3 b--white grow'>
+            <h2 className='skill-font'>{this.props.skill}</h2>
             <h4 className='skill-font'>{this.props.hours} Hours</h4>
-            <button className='skill-font f6 grow no-underline br-pill ba ph3 pv1 mr2 mb2 dib white bg-transparent' 
+            <button className='plus-button b skill-font f6 grow no-underline br-pill ba ph3 pv1 mr2 mb2 dib' 
                     onClick={() => this.props.addHour(this.props.index)}>+
             </button>
             <button 
-                className='skill-font f6 grow no-underline br-pill ba ph3 pv1 mr2 mb2 dib white bg-transparent' 
+                className='minus-button b skill-font f6 grow no-underline br-pill ba ph3 pv1 mr2 mb2 dib' 
                 onClick={() => this.props.subtractHour(this.props.index)}>-</button>
           { /*<button  onClick={this.toggleTimerHandler}>Timer</button>*/}
             <button className='skill-font f6 grow no-underline br-pill ba ph3 pv1 mb2 dib white bg-transparent'

@@ -5,6 +5,16 @@
   }
 
 .skill-background {
-      background-color: white;
-      opacity: 0.05;
+   background-color: rgba(255, 255, 255, 0.1);
   }
+
+.plus-button {
+    background: #87e285;
+    color: white;
+    
+}
+
+.minus-button {
+     background: #f96a4a;
+     color: white;
+}
